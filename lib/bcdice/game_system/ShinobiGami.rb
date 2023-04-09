@@ -63,8 +63,7 @@ module BCDice
         end
 
         def roll(randomizer)
-          result = @table.roll(randomizer)
-          return DiceTable::RollResult.new(result.table_name, result.value, @pretext + ' ＞ ' + result.body)
+          return "#{@pretext} ＞ #{@table.roll(randomizer)}"
         end
       end
 
@@ -491,6 +490,7 @@ module BCDice
         ),
 
       }.freeze
+
 
       # シーン表
       SCENE_TABLES = {
